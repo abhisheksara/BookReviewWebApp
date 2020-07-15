@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+	Book Details
+{% endblock %}
+
+{% block body %}
+	<a href="{{ url_for('logout')}}"><button>Logout</button></a>
+    <br>
+    <ul>
+    	<li>ISBN: {{book.isbn}}</li>
+    	<li>Title: {{book.title}}</li>
+    	<li>Written by: {{book.author}}</li>
+    	<li>Published in: {{book.year}}</li>
+    	<li>Rating: {{rating}}
+        <li>{{rating_count}} ratings  
+    </ul>
+    {{message}}    
+
+ 
+    <form action="{{url_for('review',book_id=book.id)}}" method="post">
+        <fieldset>
+            <legend>Write a review</legend>
+            <label>Rating
+                <select name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </label>    
+            <br>
+            <br>
+            <label>Review<br>
+                <textarea name="review" rows="10" cols="30">
+                </textarea>
+            </label>
+            <br>
+            <input type="submit" value="Submit review">
+        </fieldset>    
+    </form>
+    <h4>User Reviews</h4>
+
+    <ul>
+    	{% for review in reviews %}
+    		<li>
+    			User:{{review.username}}
+                <br>
+                Rating:{{review.rating}}
+    			<p>{{review.review}}</p>
+    		</li>
+    	{% else %}
+    		No reviews yet. Be the first one to review
+    	{% endfor %}
+    </ul>
+ {% endblock %}
+ 

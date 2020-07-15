@@ -1,0 +1,133 @@
+
+
+
+@media(min-width:701px){
+	$navcolor:#FFFFFF;
+	$navhoverclr:#565657;
+
+	%navbutton{
+	height:30px;
+  	width:auto;
+    font-family:Verdana;
+    font-size:20px;
+    color:$navcolor;
+    text-align:center;
+    padding:5px;
+}
+
+%basicnav{
+	margin-top:15px;
+    display:flex;
+    justify-content: flex-end;
+    background-color: #37383B;
+  
+  :hover{
+    background-color: $navhoverclr;
+  }
+}
+
+
+
+
+
+	
+	.container .nav{
+		@extend %basicnav;
+
+  		flex-flow:row wrap;
+  		height:40px;
+
+  	a{
+  		@extend %navbutton;
+  	}
+
+  	#activelink{
+    	background-color:#565657;
+    }
+	}
+
+	table th{
+  	border: 1px solid black;
+  	border-collapse:collapse;
+  	background-color:black;
+  	color:white;
+  }
+
+  th,td{
+  	padding:5px;
+  	text-align:left;
+  	}
+  table tr:nth-child(even){
+  	background-color: #eee;
+  }
+  table tr:nth-child(odd){
+  	background-color: #fff;
+  }
+}
+
+
+
+
+@media(max-width:700px){
+	$navcolor:#FFFFFF;
+	$navhoverclr:#565657;
+
+	%navbuttonsm{
+	height:40px;
+  	width:18%;
+    font-family:monospace;
+    font-size:20px;
+    color:$navcolor;
+    text-align:center;
+    padding:5px;
+	}
+
+	%basicnavsm{
+	margin-top:15px;
+    display:flex;
+    justify-content: flex-end;
+    background-color: #37383B;
+  
+  :hover{
+    background-color: $navhoverclr;
+  }
+}
+
+
+
+
+  .container .nav{
+  	@extend %basicnavsm;
+    flex-direction: column;
+
+
+
+    a{
+  		@extend %navbuttonsm;
+  	}
+
+	#activelink{
+    	
+    	background-color:#565657;
+    }
+
+  }
+
+  table th{
+  	border: 1px solid black;
+  	border-collapse:collapse;
+  	background-color:black;
+  	color:white;
+  }
+
+  th,td{
+  	padding:5px;
+  	text-align:left;
+  	}
+  table tr:nth-child(even){
+  	background-color: #eee;
+  }
+  table tr:nth-child(odd){
+  	background-color: #fff;
+  }
+}

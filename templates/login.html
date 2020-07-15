@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+	{{message}}	
+{% endblock %}
+
+{% block body %}
+	
+    <form action="{{ url_for('user') }}" method="post">
+    <fieldset>
+    	<legend>User credentials</legend>
+        <input type="username" name="username" placeholder="username">
+        <br>
+        <input type="password" name="password" placeholder="password">
+        <br>
+        <input type="submit" value="Login">
+    </fieldset>
+    </form>
+<br>
+Not a member? <a href="{{url_for('create')}}">Create an account</a>   
+{% endblock %}	
