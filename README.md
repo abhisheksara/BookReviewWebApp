@@ -1,5 +1,4 @@
-# abhisheksara
-
+# Book Review Web App
 Hello!
 
 This project is a web application for book reviews where users can register, login, search for a book, see the rating and reviews given by other users, and submit their review for the book.
